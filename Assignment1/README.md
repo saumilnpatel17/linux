@@ -1,7 +1,11 @@
 <h1>Questions-Answers</h1><br/>
 <b>For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).</b><br/><br/>
 
-<b>Saumil (013829270)</b> - I researched on how to setup the environment to complete the assignment. First, I chose to create an outer vm on Google cloud but since assignment requirement is to create an outer vm of 160 GB to 200 GB, it is too expensive to such vm on Google cloud. Then I chose to move forward with setting up the environment on my laptop but I found it complicated to install vmware workstation on my laptop and then create outer vm on it and then create inner vm inside it. Finally, I moved forward with installing linux on external SSD. I installed linux on external SSD of 1 TB and created inner vm of 100 GB with linux installed on it. Now that environment is up and running, I successfully ran the demo for assignment 1 which was shown in video. My teammate did the research on tables of different control fields in SDM. Then we both prepared the code and implemented it in kernel module. Then we have compiled it and inserted the module in kernel and stored the result.
+<b>Saumil (013829270)</b> - I researched on how to setup the environment to complete the assignment. First, I chose to create an outer vm on Google cloud but since assignment requirement is to create an outer vm of 160 GB to 200 GB, it is too expensive to such vm on Google cloud. Then I chose to move forward with setting up the environment on my laptop but I found it complicated to install vmware workstation on my laptop and then create outer vm on it and then create inner vm inside it. Finally, I moved forward with installing linux on external SSD. I installed linux on external SSD of 1 TB and created inner vm of 100 GB with linux installed on it. Now that environment is up and running, I successfully ran the demo for assignment 1 which was shown in video. My teammate did the research on tables of different control fields in SDM. Then we both prepared the code and implemented it in kernel module. Then we have compiled it and inserted the module in kernel and stored the result.<br/>
+
+<b>Namratha</b> -
+
+<br/>
 
 
 <b>Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.</b>
