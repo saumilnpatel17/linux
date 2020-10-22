@@ -1,4 +1,5 @@
-<b>For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).</b>
+<h1>Questions-Answers</h1><br/>
+<b>For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).</b><br/>
 
 <b>Saumil (013829270)</b> - I researched on how to setup the environment to complete the assignment. First, I chose to create an outer vm on Google cloud but since assignment requirement is to create an outer vm of 160 GB to 200 GB, it is too expensive to such vm on Google cloud. Then I chose to move forward with setting up the environment on my laptop but I found it complicated to install vmware workstation on my laptop and then create outer vm on it and then create inner vm inside it. Finally, I moved forward with installing linux on external SSD. I installed linux on external SSD of 1 TB and created inner vm of 100 GB with linux installed on it. Now that environment is up and running, I successfully ran the demo for assignment 1 which was shown in video. My teammate did the research on tables of different control fields in SDM. Then we both prepared the code and implemented it in kernel module. Then we have compiled it and inserted the module in kernel and stored the result.
 
@@ -27,3 +28,23 @@ Step 16: Make changes to the cmpe283-1.c to fulfill assignment requirements.<br/
 Step 17: Run “make” command to compile which will generate cmpe283-1.ko file<br/>
 Step 18: Run “sudo insmod cmpe283-1.ko” command to insert kernel module into kernel.<br/>
 Step 19: Run “dmesg” command to see output for all controls’ capabilities.<br/>
+
+<h1>Output</h1><br/>
+
+<b>Pinbased</b><br/>
+![Alt text](Screenshots/Pinbased.png?raw=true "Pinbased")<br/><br/>
+
+<b>Procbased</b><br/>
+![Alt text](Screenshots/Procbased.png?raw=true "Procbased")<br/><br/>
+
+<b>Secondary Procbased</b><br/>
+![Alt text](Screenshots/SecondaryProcbased.png?raw=true "Secondary Procbased")<br/><br/>
+
+<b>Exitbased</b><br/>
+![Alt text](Screenshots/Exitbased.png?raw=true "Exitbased")<br/><br/>
+
+<b>Entrybased</b><br/>
+![Alt text](Screenshots/Entrybased.png?raw=true "Entrybased")<br/>
+
+
+
