@@ -3,7 +3,7 @@
 
 <b>Saumil (013829270)</b> - I researched on how to setup the environment to complete the assignment. First, I chose to create an outer vm on Google cloud but since assignment requirement is to create an outer vm of 160 GB to 200 GB, it is too expensive to such vm on Google cloud. Then I chose to move forward with setting up the environment on my laptop but I found it complicated to install vmware workstation on my laptop and then create outer vm on it and then create inner vm inside it. Finally, I moved forward with installing linux on external SSD. I installed linux on external SSD of 1 TB and created inner vm of 100 GB with linux installed on it. Now that environment is up and running, I successfully ran the demo for assignment 1 which was shown in video. My teammate did the research on tables of different control fields in SDM. <br/>
 
-<b>Namratha</b> - To understand the assignment I setup a Linux VM on VMware Workstation. I did the research on tables of different control fields in the Intel SDM and got the required information for IA32_VMX_PROCBASED_CTLS, IA32_VMX_PROCBASED_CTLS2, IA32_VMX_EXIT_CTLS and IA32_VMX_ENTRY_CTLS (mapping  of bit information).
+<b>Namratha (014597258)</b> - To understand the assignment I setup a Linux VM on VMware Workstation. I did the research on tables of different control fields in the Intel SDM and got the required information for IA32_VMX_PROCBASED_CTLS, IA32_VMX_PROCBASED_CTLS2, IA32_VMX_EXIT_CTLS and IA32_VMX_ENTRY_CTLS (mapping  of bit information).
 <br/>
 <br/>
 Then we both prepared the code and implemented it in kernel module. Then we have compiled it and inserted the module in kernel and stored the result. 
