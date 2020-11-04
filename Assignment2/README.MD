@@ -57,7 +57,7 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 ![Alt text](Screenshots/AfterBoot.png?raw=true "AfterBoot")<br/><br/>
 
 <b>Few Minutes After Boot Up</b><br/>
-![Alt text](Screenshots/AfterBoot.png?raw=true "AfterBoot")<br/><br/>
+![Alt text](Screenshots/FewMinsAfterBoot.png?raw=true "FewMinsAfterBoot")<br/><br/>
 
 <b>Long Time After Boot Up</b><br/>
 ![Alt text](Screenshots/LongTimeAfterBoot.png?raw=true "LongTimeAfterBoot")<br/><br/>
