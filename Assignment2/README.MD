@@ -22,9 +22,26 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <br/>
 <br/>
 <br/>
-<b>Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.</b>
+<b>Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.</b><br/><br/><br/>
 
-<br/>
-<br/>
-<br/>
+- Create ubuntu box on external ssd of 1 TB. Call this box as Outer VM.<br/>
+- Create ubuntu vm of 100 GB inside of Outer VM. Call this vm as Inner VM.<br/>
+- Go to Outer VM.<br/>
+- Fork linux repository.<br/>
+- Clone forked linux repository in Outer VM using https://github.com/saumilnpatel17/linux.git<br/>
+- Follow the following commands to build the linux kernel:<br/>
+  - sudo apt install gcc make<br/>
+  - sudo bash<br/>
+  - apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev<br/>
+  - uname -a (It gives me kernel version 5.4.0-52-generic)<br/>
+  - cp /boot/config-5.4.0.-52-generic ./.config<br/>
+  - make oldconfig<br/>
+  - make -j4<br/>
+  - make modules -j4<br/>
+  - make modules_install -j4<br/>
+  - make install -j4<br/>
+- After kernel build, reboot the computer and check kernel version. It's 5.9.0+<br/>
+- Make modifications on vmx.c (vmx_handle_exit function to be modified, initiate the timer and increment the counter at the beginning of vmx_handle_exit. Before performing the return operation from the function calculate the difference of current time and inital time to get the total time taken<br/>
+- Make modifications on cpuid.c (kvm_emulate_cpuid function to be modified, add a condition to check if eax=0x4fffffff and if so update the eax value with total number of exits and the ebx and ecx values with the top and bottom 32 bits of the total time taken processing exits<br/>
+
 <b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b>
