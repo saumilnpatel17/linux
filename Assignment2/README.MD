@@ -43,5 +43,21 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 - After kernel build, reboot the computer and check kernel version. It's 5.9.0+<br/>
 - Make modifications on vmx.c (vmx_handle_exit function to be modified, initiate the timer and increment the counter at the beginning of vmx_handle_exit. Before performing the return operation from the function calculate the difference of current time and inital time to get the total time taken<br/>
 - Make modifications on cpuid.c (kvm_emulate_cpuid function to be modified, add a condition to check if eax=0x4fffffff and if so update the eax value with total number of exits and the ebx and ecx values with the top and bottom 32 bits of the total time taken processing exits<br/>
+- Now build the kernel again using same make, make modules, make modules_install and make install sequence.<br/>
+- Then remove kvm-intel and kvm kernel objects using -> sudo rmmod kvm-intel.ko and sudo rmmod kvm.ko command<br/>
+- Now add new kvm-intel and kvm kernel objects from linux repo. Path is /arch/x86/kvm/<br/>
+  - sudo insmod kvm.ko<br/>
+  - sudo insmod kvm-intel.ko<br/>
+- Reboot<br/>
+-Run the test case. It should give the desired output.<br/>
 
 <b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b>
+
+<b>Just After Boot Up</b><br/>
+![Alt text](Screenshots/AfterBoot.png?raw=true "AfterBoot")<br/><br/>
+
+<b>Few Minutes After Boot Up</b><br/>
+![Alt text](Screenshots/AfterBoot.png?raw=true "AfterBoot")<br/><br/>
+
+<b>Long Time After Boot Up</b><br/>
+![Alt text](Screenshots/LongTimeAfterBoot.png?raw=true "LongTimeAfterBoot")<br/><br/>
