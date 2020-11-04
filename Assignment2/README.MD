@@ -24,19 +24,19 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <br/>
 
 <b></b><br/>
-![Alt text](Screenshots/1.png?raw=true "")<br/><br/>
+![Alt text](Screenshots/CodeSnippets/1.png?raw=true "")<br/><br/>
 
 <b></b><br/>
-![Alt text](Screenshots/2.png?raw=true "")<br/><br/>
+![Alt text](Screenshots/CodeSnippets/2.png?raw=true "")<br/><br/>
 
 <b></b><br/>
-![Alt text](Screenshots/3.png?raw=true "")<br/><br/>
+![Alt text](Screenshots/CodeSnippets/3.png?raw=true "")<br/><br/>
 
 <b></b><br/>
-![Alt text](Screenshots/4.png?raw=true "")<br/><br/>
+![Alt text](Screenshots/CodeSnippets/4.png?raw=true "")<br/><br/>
 
 <b></b><br/>
-![Alt text](Screenshots/5.png?raw=true "")<br/><br/>
+![Alt text](Screenshots/CodeSnippets/5.png?raw=true "")<br/><br/>
 
 <br/>
 <b>Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.</b><br/><br/><br/>
