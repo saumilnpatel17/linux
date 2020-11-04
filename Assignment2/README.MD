@@ -6,14 +6,15 @@
 
 - Researched on how atomic variables work in C
 - How to share atomic variables between various modules of C
-- How to increament atomic variable
+- How to increment atomic variable
 - How to read time stamp counter using RDTSC()
 - How to add values in atomic variable
 - Made code changes in cpuid.c and vmx.c
 
 <br/>
 
-<b>Namratha (014597258)</b> - On VMware Workstation I created an Ubuntu machine with 200GB hard disk capacity and built another Linux VM within this Ubuntu create the setup for assignment 2. I then researched and found information on changes to be made on vmx.c and cpuid.c and to create test2.c .
+<b>Namratha (014597258)</b> -On VMware Workstation I created an Ubuntu machine with 200GB hard disk capacity. To build the linux kernel, I faced issues using the make command provided and changed the order to make, make modules, make modules_install, make install.I then researched and found information on changes to be made on vmx.c and cpuid.c and to create test2.c, involving creation and incrementing atomic variable for the counter and read timestamps. After this, we collaborated together to complete the assignment going back and forth with each other on areas where we need to change the code, how to change the code and how to handle various scenarios such as multi-VCPU VM.
+<br/>
 <br/>
 <br/>
 
