@@ -67,6 +67,9 @@
 MODULE_AUTHOR("Qumranet");
 MODULE_LICENSE("GPL");
 
+extern atomic_t cmpe283_assign2_atm_exit_count;
+extern atomic_t cmpe283_assign2_atm_time_count;
+
 #ifdef MODULE
 static const struct x86_cpu_id vmx_cpu_id[] = {
 	X86_MATCH_FEATURE(X86_FEATURE_VMX, NULL),
@@ -5987,10 +5990,14 @@ void dump_vmcs(void)
  */
 static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 {
+	u64 cmpe283_assign2_time_start = rdtsc();
 	struct vcpu_vmx *vmx = to_vmx(vcpu);
 	u32 exit_reason = vmx->exit_reason;
 	u32 vectoring_info = vmx->idt_vectoring_info;
 
+	//CMPE283 Assignment 2 code changes
+	atomic_inc(&cmpe283_assign2_atm_exit_count);
+	
 	/*
 	 * Flush logged GPAs PML buffer, this will make dirty_bitmap more
 	 * updated. Another good is, in kvm_vm_ioctl_get_dirty_log, before
@@ -6010,8 +6017,10 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 	WARN_ON_ONCE(vmx->nested.nested_run_pending);
 
 	/* If guest state is invalid, start emulating */
-	if (vmx->emulation_required)
+	if (vmx->emulation_required){
+		atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 		return handle_invalid_guest_state(vcpu);
+	}
 
 	if (is_guest_mode(vcpu)) {
 		/*
@@ -6027,8 +6036,10 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 		 */
 		nested_mark_vmcs12_pages_dirty(vcpu);
 
-		if (nested_vmx_reflect_vmexit(vcpu))
+		if (nested_vmx_reflect_vmexit(vcpu)) {
+			atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 			return 1;
+		}
 	}
 
 	if (exit_reason & VMX_EXIT_REASONS_FAILED_VMENTRY) {
@@ -6037,6 +6048,8 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 		vcpu->run->fail_entry.hardware_entry_failure_reason
 			= exit_reason;
 		vcpu->run->fail_entry.cpu = vcpu->arch.last_vmentry_cpu;
+
+		atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 		return 0;
 	}
 
@@ -6046,6 +6059,8 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 		vcpu->run->fail_entry.hardware_entry_failure_reason
 			= vmcs_read32(VM_INSTRUCTION_ERROR);
 		vcpu->run->fail_entry.cpu = vcpu->arch.last_vmentry_cpu;
+
+		atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 		return 0;
 	}
 
@@ -6075,6 +6090,8 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 		}
 		vcpu->run->internal.data[vcpu->run->internal.ndata++] =
 			vcpu->arch.last_vmentry_cpu;
+
+		atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 		return 0;
 	}
 
@@ -6097,8 +6114,10 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 		}
 	}
 
-	if (exit_fastpath != EXIT_FASTPATH_NONE)
+	if (exit_fastpath != EXIT_FASTPATH_NONE) {
+		atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 		return 1;
+	}
 
 	if (exit_reason >= kvm_vmx_max_exit_handlers)
 		goto unexpected_vmexit;
@@ -6122,6 +6141,7 @@ static int vmx_handle_exit(struct kvm_vcpu *vcpu, fastpath_t exit_fastpath)
 	if (!kvm_vmx_exit_handlers[exit_reason])
 		goto unexpected_vmexit;
 
+	atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 	return kvm_vmx_exit_handlers[exit_reason](vcpu);
 
 unexpected_vmexit:
@@ -6133,6 +6153,8 @@ unexpected_vmexit:
 	vcpu->run->internal.ndata = 2;
 	vcpu->run->internal.data[0] = exit_reason;
 	vcpu->run->internal.data[1] = vcpu->arch.last_vmentry_cpu;
+
+	atomic_add(rdtsc() - cmpe283_assign2_time_start, &cmpe283_assign2_atm_time_count);
 	return 0;
 }
 
