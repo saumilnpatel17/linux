@@ -31,6 +31,11 @@
 u32 kvm_cpu_caps[NCAPINTS] __read_mostly;
 EXPORT_SYMBOL_GPL(kvm_cpu_caps);
 
+atomic_t cmpe283_assign2_atm_exit_count;
+atomic_t cmpe283_assign2_atm_time_count;
+EXPORT_SYMBOL_GPL(cmpe283_assign2_atm_exit_count);
+EXPORT_SYMBOL_GPL(cmpe283_assign2_atm_time_count);
+
 static u32 xstate_required_size(u64 xstate_bv, bool compacted)
 {
 	int feature_bit = 0;
@@ -1075,17 +1080,31 @@ EXPORT_SYMBOL_GPL(kvm_cpuid);
 int kvm_emulate_cpuid(struct kvm_vcpu *vcpu)
 {
 	u32 eax, ebx, ecx, edx;
+	u64 cmpe283_assign2_time_count;
 
 	if (cpuid_fault_enabled(vcpu) && !kvm_require_cpl(vcpu, 0))
 		return 1;
 
 	eax = kvm_rax_read(vcpu);
 	ecx = kvm_rcx_read(vcpu);
-	kvm_cpuid(vcpu, &eax, &ebx, &ecx, &edx, false);
-	kvm_rax_write(vcpu, eax);
-	kvm_rbx_write(vcpu, ebx);
-	kvm_rcx_write(vcpu, ecx);
-	kvm_rdx_write(vcpu, edx);
+
+	if(eax == 0x4fffffff) {
+		eax = atomic_read(&cmpe283_assign2_atm_exit_count);
+		kvm_rax_write(vcpu, eax);
+
+		cmpe283_assign2_time_count = atomic_read(&cmpe283_assign2_atm_time_count);
+		ecx = cmpe283_assign2_time_count & 0xffffffff;
+		ebx = (cmpe283_assign2_time_count >> 32) & 0xffffffff;
+		kvm_rbx_write(vcpu, ebx);
+		kvm_rcx_write(vcpu, ecx);
+		
+	} else {
+		kvm_cpuid(vcpu, &eax, &ebx, &ecx, &edx, false);
+		kvm_rax_write(vcpu, eax);
+		kvm_rbx_write(vcpu, ebx);
+		kvm_rcx_write(vcpu, ecx);
+		kvm_rdx_write(vcpu, edx);
+	}
 	return kvm_skip_emulated_instruction(vcpu);
 }
 EXPORT_SYMBOL_GPL(kvm_emulate_cpuid);
