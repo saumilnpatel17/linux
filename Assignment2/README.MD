@@ -23,19 +23,19 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <br/>
 <br/>
 
-<b></b><br/>
+<b>Declare and export Atomic Variables in cpuid.c</b><br/>
 ![Alt text](Screenshots/CodeSnippets/1.png?raw=true "")<br/><br/>
 
-<b></b><br/>
+<b>Changes to kvm_emulate_cpuid function in cpuid.c</b><br/>
 ![Alt text](Screenshots/CodeSnippets/2.png?raw=true "")<br/><br/>
 
-<b></b><br/>
+<b>Use atomic variables in vmx_handle_exit.c</b><br/>
 ![Alt text](Screenshots/CodeSnippets/3.png?raw=true "")<br/><br/>
 
-<b></b><br/>
+<b>Declare and initialize start time in vm exit and increment exit counter</b><br/>
 ![Alt text](Screenshots/CodeSnippets/4.png?raw=true "")<br/><br/>
 
-<b></b><br/>
+<b>Compute difference of time and add it to time counter before each return in vmx_handle_exit function</b><br/>
 ![Alt text](Screenshots/CodeSnippets/5.png?raw=true "")<br/><br/>
 
 <br/>
