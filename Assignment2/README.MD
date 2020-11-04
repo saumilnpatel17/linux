@@ -52,7 +52,10 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 - Reboot<br/>
 -Run the test case. It should give the desired output.<br/>
 
-<b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b>
+<b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b><br/>
+
+By looking at the following screenshots, it appears that number exits does not increase at a stable rate. The number of exits is very high just after boot up. It is 0x80CE8 (Int: 527592) right after boot up and it increased with over a period of time but the rate at which number of exits occured slowed down but soon after performing some operations, number of exits again increased drastically. So no conclusion can be made for the rate at which exits will happen.
+<br/><br/>
 
 <b>Just After Boot Up</b><br/>
 ![Alt text](Screenshots/AfterBoot.png?raw=true "AfterBoot")<br/><br/>
