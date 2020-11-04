@@ -5,9 +5,13 @@
 <b>Saumil (013829270)</b> - 
 
 <br/>
-<b>Namratha (014597258)</b> - 
+
+<b>Namratha (014597258)</b> - On VMware Workstation I created an Ubuntu machine with 200GB hard disk capacity and built another Linux VM within this Ubuntu create the setup for assignment 2. I then researched and found information on changes to be made on vmx.c and cpuid.c and to create test2.c .
+<br/>
+<br/>
 
 
+We both then modified the code for vmx.c and cpuid.c and test2.c .
 <br/>
 <br/>
 <br/>
