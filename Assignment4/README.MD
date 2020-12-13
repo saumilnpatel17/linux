@@ -10,17 +10,17 @@
 <br/>
 <br/>
 
-<b>Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.</b>
+<b>Include a sample of your print of exit count output from dmesg from “with ept” and “without ept”.</b>
 
 <br/>
 <br/>
 
-<b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b>
+<b>What did you learn from the count of exits? Was the count what you expected? If not, why not?</b>
 
 <br/>
 <br/>
 
-<b>Of the exit types defined in the SDM, which are the most frequent? Least?</b>
+<b>What changed between the two runs (ept vs no-ept)?</b>
 
 <br/>
 <br/>
