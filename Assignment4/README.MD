@@ -29,6 +29,11 @@
 
 ![Alt text](ScreenShots/shadowpagingexits.png?raw=true "")<br/><br/>
 
+Total exits and exit for exit reason 28 were clearly higher with ept. Moreover, time spent in exit was also very high with ept.
+
+<br/>
+<br/>
+
 <b>What did you learn from the count of exits? Was the count what you expected? If not, why not?</b>
 
 <br/>
