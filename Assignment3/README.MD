@@ -53,6 +53,28 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <br/>
 
 <b>Of the exit types defined in the SDM, which are the most frequent? Least?</b>
+<br />
+Among the exit types defined in the SDM the following exits are some of the exits that occur more frequently than the others:
+<br /><br />
+0	Exception or non-maskable interrupt (NMI)<br />
+1	External interrupt<br />
+7	Interrupt window.<br />
+10	CPUID<br />
+12	HLT<br />
+30	I/O instruction<br />
+31	RDMSR<br />
+32	WRMSR<br />
+40	PAUSE<br />
+<br />
+Among the exit types defined in the SDM the following exits are some of the exits that occur less frequently than the others:<br />
+6	Other SMI<br />
+8	NMI window<br />
+17	RSM<br />
+26	VMXOFF<br />
+45	Virtualized EOI<br />
+51	RDTSCP<br />
+58	INVPCID<br />
+68	TPAUSE<br />
 
 <br/>
 <br/>
