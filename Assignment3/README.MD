@@ -46,7 +46,7 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 
 <br/>
 
-<b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b><br/>
+<b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b><br/><br/>
 By observing the VM behaviour, we notice that the number exits does not increase at a stable rate. There is a high spike in the number of exits occuring when we check immediately after the VM boots up. After the spike we notice that the number of exits then only increase gradually over a period of time however we see that whenever an operation is performed there is again a sudden spike in the number of exits. Therefore no conclusion can be made for the rate at which exits will happen.
 <br/>
 <br/>
