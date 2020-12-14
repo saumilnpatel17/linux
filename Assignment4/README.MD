@@ -25,4 +25,16 @@
 <br/>
 <br/>
 
-<h1>Output</h1><br/>
+<h1>Output</h1><br/><br/>
+
+![Alt text](ScreenShots/1.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/2.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/3.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/4.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/5.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/6.png?raw=true "")<br/><br/>
