@@ -27,6 +27,22 @@
 
 <h1>Output</h1><br/><br/>
 
+<h3>Using Nested Paging, Before doing sudo insmod kvm.intel.ko ept=0</h3><br/><br/>
+
+![Alt text](ScreenShots/NestedPaging1.jpeg?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/NestedPaging2.jpeg?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/NestedPaging3.jpeg?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/NestedPaging4.jpeg?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/NestedPaging5.jpeg?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/NestedPaging6.jpeg?raw=true "")<br/><br/>
+
+<h3>Using Shadow Paging, After doing sudo insmod kvm-intel.ko ept=0</h3><br/><br/>
+
 ![Alt text](ScreenShots/1.png?raw=true "")<br/><br/>
 
 ![Alt text](ScreenShots/2.png?raw=true "")<br/><br/>
