@@ -31,3 +31,25 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <br/>
 
 <h1>Output</h1><br/>
+
+<b>Declare and export Atomic Variables in cpuid.c</b><br/>
+![Alt text](Screenshots/atomic_variables.png?raw=true "")<br/><br/>
+
+<b>Changes to kvm_emulate_cpuid function in cpuid.c</b><br/>
+![Alt text](Screenshots/cpuid_leaf.png?raw=true "")<br/><br/>
+
+<b>Use atomic variables in vmx_handle_exit.c</b><br/>
+![Alt text](Screenshots/vmx_atomic.png?raw=true "")<br/><br/>
+
+<b>Declare and initialize start time in vm exit and increment exit counter</b><br/>
+![Alt text](Screenshots/vmx_changes.png?raw=true "")<br/><br/>
+
+<b>Exit number 1 - Valid and Enabled Exit</b>
+![Alt text](Screenshots/exit1.JPG?raw=true "")<br/><br/>
+
+<b>Exit number 13 - Disabled Exit</b>
+![Alt text](Screenshots/exit13.JPG?raw=true "")<br/><br/>
+
+<b>Exit number 35 - Invalid Exit (Not listed in SDM)</b>
+<b>Exit number 35</b>
+![Alt text](Screenshots/exit35.JPG?raw=true "")<br/><br/>
