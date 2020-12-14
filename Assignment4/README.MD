@@ -15,6 +15,20 @@
 <br/>
 <br/>
 
+<b>Without Ept</b><br/><br/>
+
+![Alt text](ScreenShots/nestedpagingexit.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/nestedpagingexit28.png?raw=true "")<br/><br/>
+
+<b>With Ept</b><br/><br/>
+
+![Alt text](ScreenShots/shadowpagingexit.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/shadowpagingexit28.png?raw=true "")<br/><br/>
+
+![Alt text](ScreenShots/shadowpagingexits.png?raw=true "")<br/><br/>
+
 <b>What did you learn from the count of exits? Was the count what you expected? If not, why not?</b>
 
 <br/>
