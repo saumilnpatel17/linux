@@ -1,7 +1,9 @@
 <h1>Questions-Answers</h1><br/>
 <b>For each member in your team, provide 1 paragraph detailing what parts of the lab that member implemented / researched. (You may skip this question if you are doing the lab by yourself).</b><br/><br/>
 
-<b>Saumil (013829270)</b> - 
+<b>Saumil (013829270)</b> - I ran my assignment 3 environment, booted outer vm and then performed rmmod kvm-intel.ko. Then I went to linux/arch/x86/kvm and then performed sudo insmod kvm-intel.ko ept=0. Then I booted my inner vm and captured total number of exits and total number of individual exits for all exit reasons.
+<br/>
+I have worked on observing total number of exits and total number of exits for each exit reason mentioned in sdm with ept=0 (shadow paging). I also worked on comparing exits between with ept and without ept. I researched on which exits were increased in with ept mode and researched which exits they are.
 
 <br/>
 
