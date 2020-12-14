@@ -44,12 +44,19 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <b>Declare and initialize start time in vm exit and increment exit counter</b><br/>
 ![Alt text](ScreenShots/vmx_changes.png?raw=true "")<br/><br/>
 
-<b>Exit number 1 - Valid and Enabled Exit</b>
+<b>Exit number 1 - Valid and Enabled Exit</b><br/>
 ![Alt text](ScreenShots/exit1.JPG?raw=true "")<br/><br/>
 
-<b>Exit number 13 - Disabled Exit</b>
+<b>Exit number 13 - Disabled Exit</b><br/>
 ![Alt text](ScreenShots/exit13.JPG?raw=true "")<br/><br/>
 
-<b>Exit number 35 - Invalid Exit (Not listed in SDM)</b>
-<b>Exit number 35</b>
-![Alt text](ScreenShots/exit35.JPG?raw=true "")<br/><br/>
+<b>Exit number 35 - Invalid Exit (Not listed in SDM)</b><br/>
+![Alt text](ScreenShots/exit35.JPG?raw=true "")<br/><br/><br/>
+
+<h1>All Exits from 0 to 68</h1><br/><br/>
+![Alt text](ScreenShots/1.jpeg?raw=true "")<br/><br/><br/>
+![Alt text](ScreenShots/2.jpeg?raw=true "")<br/><br/><br/>
+![Alt text](ScreenShots/3.jpeg?raw=true "")<br/><br/><br/>
+![Alt text](ScreenShots/4.jpeg?raw=true "")<br/><br/><br/>
+![Alt text](ScreenShots/5.jpeg?raw=true "")<br/><br/><br/>
+![Alt text](ScreenShots/6.jpeg?raw=true "")<br/><br/><br/>
