@@ -8,7 +8,6 @@
 <b>Namratha (014597258)</b> - I used the VM environment from Assignment 2 where on VMware Workstation I created an Ubuntu machine and built inner VM . I then made the changes on the cpuid.c and vmx.c and ran make, make modules, make modules_install, make install. After this, we collaborated together to complete the assignment going back and forth with each other on areas where we need to change the code, how to change the code and how to handle various scenarios such as multi-VCPU VM.
 
 <br/>
-<br/>
 
 We both then modified the code for vmx.c and cpuid.c and test2.c.
 <br/>
@@ -36,7 +35,7 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
   - make install -j4<br/>
 - After kernel build, reboot the computer and check kernel version. It's 5.9.0+<br/>
 - Make modifications on vmx.c (vmx_handle_exit function to be modified, If the exit is valid and enabled increment the counter for that exit)<br/>
-- Make modifications on cpuid.c (kvm_emulate_cpuid function to be modified, add a condition to check if eax=0x4ffffffe and check if th exit number is valid/disabled/invalid. If valid)<br/>
+- Make modifications on cpuid.c (kvm_emulate_cpuid function to be modified, add a condition to check if eax=0x4ffffffe and check if the exit number is valid/disabled/invalid. If valid update EAX with the count)<br/>
 - Now build the kernel again using same make, make modules, make modules_install and make install sequence.<br/>
 - Then remove kvm-intel and kvm kernel objects using -> sudo rmmod kvm-intel.ko and sudo rmmod kvm.ko command<br/>
 - Now add new kvm-intel and kvm kernel objects from linux repo. Path is /arch/x86/kvm/<br/>
