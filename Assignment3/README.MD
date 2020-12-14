@@ -53,9 +53,9 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <br/>
 
 <b>Of the exit types defined in the SDM, which are the most frequent? Least?</b>
-<br />
-Among the exit types defined in the SDM the following exits are some of the exits that occur more frequently than the others:
 <br /><br />
+Among the exit types defined in the SDM the following exits are some of the exits that occur more frequently than the others:
+<br />
 0	Exception or non-maskable interrupt (NMI)<br />
 1	External interrupt<br />
 7	Interrupt window.<br />
