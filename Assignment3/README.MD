@@ -47,8 +47,8 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 
 <br/>
 
-<b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b>
-
+<b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b><br/>
+By observing the VM behaviour, we notice that the number exits does not increase at a stable rate. There is a high spike in the number of exits occuring when we check immediately after the VM boots up. After the spike we notice that the number of exits then only increase gradually over a period of time however we see that whenever an operation is performed there is again a sudden spike in the number of exits. Therefore no conclusion can be made for the rate at which exits will happen.
 <br/>
 <br/>
 
@@ -58,7 +58,7 @@ Among the exit types defined in the SDM the following exits are some of the exit
 <br />
 0	Exception or non-maskable interrupt (NMI)<br />
 1	External interrupt<br />
-7	Interrupt window.<br />
+7	Interrupt window<br />
 10	CPUID<br />
 12	HLT<br />
 30	I/O instruction<br />
