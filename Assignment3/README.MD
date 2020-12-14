@@ -54,9 +54,15 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 ![Alt text](ScreenShots/exit35.JPG?raw=true "")<br/><br/><br/>
 
 <h1>All Exits from 0 to 68</h1><br/><br/>
+
 ![Alt text](ScreenShots/1.jpeg?raw=true "")<br/><br/><br/>
+
 ![Alt text](ScreenShots/2.jpeg?raw=true "")<br/><br/><br/>
+
 ![Alt text](ScreenShots/3.jpeg?raw=true "")<br/><br/><br/>
+
 ![Alt text](ScreenShots/4.jpeg?raw=true "")<br/><br/><br/>
+
 ![Alt text](ScreenShots/5.jpeg?raw=true "")<br/><br/><br/>
+
 ![Alt text](ScreenShots/6.jpeg?raw=true "")<br/><br/><br/>
