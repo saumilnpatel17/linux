@@ -5,7 +5,7 @@
 
 <br/>
 
-<b>Namratha (014597258)</b> - I used the VM environment from Assignment 2 where on VMware Workstation I created an Ubuntu machine and built inner vm .I then made the chnages on the cpuid.c and vmx.c and ran make, make modules, make modules_install, make install. After this, we collaborated together to complete the assignment going back and forth with each other on areas where we need to change the code, how to change the code and how to handle various scenarios such as multi-VCPU VM.
+<b>Namratha (014597258)</b> - I used the VM environment from Assignment 2 where on VMware Workstation I created an Ubuntu machine and built inner VM . I then made the changes on the cpuid.c and vmx.c and ran make, make modules, make modules_install, make install. After this, we collaborated together to complete the assignment going back and forth with each other on areas where we need to change the code, how to change the code and how to handle various scenarios such as multi-VCPU VM.
 
 <br/>
 <br/>
@@ -17,6 +17,34 @@ We both then modified the code for vmx.c and cpuid.c and test2.c.
 <b>Describe in detail the steps you used to complete the assignment. Consider your reader to be someone skilled in software development but otherwise unfamiliar with the assignment. Good answers to this question will be recipes that someone can follow to reproduce your development steps.</b>
 
 <br/>
+
+- Create ubuntu box on external ssd of 1 TB. Call this box as Outer VM.<br/>
+- Create ubuntu vm of 100 GB inside of Outer VM. Call this vm as Inner VM.<br/>
+- Go to Outer VM.<br/>
+- Fork linux repository.<br/>
+- Clone forked linux repository in Outer VM using https://github.com/saumilnpatel17/linux.git<br/>
+- Follow the following commands to build the linux kernel:<br/>
+  - sudo apt install gcc make<br/>
+  - sudo bash<br/>
+  - apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev<br/>
+  - uname -a (It gives me kernel version 5.4.0-52-generic)<br/>
+  - cp /boot/config-5.4.0.-52-generic ./.config<br/>
+  - make oldconfig<br/>
+  - make -j4<br/>
+  - make modules -j4<br/>
+  - make modules_install -j4<br/>
+  - make install -j4<br/>
+- After kernel build, reboot the computer and check kernel version. It's 5.9.0+<br/>
+- Make modifications on vmx.c (vmx_handle_exit function to be modified, If the exit is valid and enabled increment the counter for that exit)<br/>
+- Make modifications on cpuid.c (kvm_emulate_cpuid function to be modified, add a condition to check if eax=0x4ffffffe and check if th exit number is valid/disabled/invalid. If valid)<br/>
+- Now build the kernel again using same make, make modules, make modules_install and make install sequence.<br/>
+- Then remove kvm-intel and kvm kernel objects using -> sudo rmmod kvm-intel.ko and sudo rmmod kvm.ko command<br/>
+- Now add new kvm-intel and kvm kernel objects from linux repo. Path is /arch/x86/kvm/<br/>
+  - sudo insmod kvm.ko<br/>
+  - sudo insmod kvm-intel.ko<br/>
+- Reboot<br/>
+-Run the test case. It should give the desired output.<br/>
+
 <br/>
 
 <b>Comment on the frequency of exits – does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? Approximately how many exits does a full VM boot entail?</b>
