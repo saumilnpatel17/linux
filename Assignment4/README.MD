@@ -7,8 +7,9 @@ I have worked on observing total number of exits and total number of exits for e
 
 <br/>
 
-<b>Namratha (014597258)</b> - 
-
+<b>Namratha (014597258)</b> -  I ran my assignment 3 environment, booted outer vm and then performed rmmod kvm-intel.ko. Then I went to linux/arch/x86/kvm and then performed sudo insmod kvm-intel.ko. Then I booted my inner vm and captured total number of exits and total number of individual exits for all exit reasons.
+<br/>
+I have worked on observing total number of exits and total number of exits for each exit reason mentioned in sdm for nested paging. I also worked on comparing exits between with ept and without ept. I researched on which exits were increased in with ept mode and researched which exits they are.
 <br/>
 <br/>
 
